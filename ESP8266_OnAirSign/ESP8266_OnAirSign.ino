@@ -70,7 +70,7 @@ void loop() {
   
   // This will send the request to the server
   client.print(String("GET ") + PATH + " HTTP/1.1\r\n" +
-               "Host: " + PATH + "\r\n" + 
+               "Host: " + HOST + "\r\n" + 
                "Connection: close\r\n\r\n");
 
   int32_t timeout = millis() + 1000;
