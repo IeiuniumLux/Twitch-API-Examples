@@ -13,7 +13,7 @@ const char* password = "password";
 #define REFRESH 20  // seconds between refresh
 #define LED 13
 #define PIN 12
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(30, PIN, NEO_GRBW + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(30, PIN, NEO_GRB + NEO_KHZ800);  // change to NEO_GRBW + NEO_KHZ800 if using RGB + white strips
 
 // Fill the dots one after the other with a color
 void colorWipe(uint32_t c, uint8_t wait) {
@@ -25,6 +25,8 @@ void colorWipe(uint32_t c, uint8_t wait) {
 }
 
 void setup() {
+  strip.begin();
+  
   Serial.begin(115200);
   delay(100);
 
